@@ -129,7 +129,7 @@ const BookInfoComponent = ({ library, setLibrary, id }: any) => {
           <Box className={classes.parent}>
             <Box>
               {library.map((curr: any) => {
-                if (curr.id === bookId) {
+                if (curr.id == bookId) {
                   bookDataSynopics = curr.synopics;
                   bookDatafor = curr.for;
                   bookDataAboutAuthor = curr.about_author;
