@@ -78,7 +78,7 @@ let trendingBlinks = [
     aim: "Turning Your Business into an Enduring Great Company",
   },
   {
-    id: 5,
+    id: 5, // const BookInfoComponent = ({ library, setLibrary, id }: any) => {
     name: "Loving Your Business",
     url: "./assets/Image/Book_Image/lovingYourBusiness.png",
     timeRead: "13-minute read",
@@ -91,7 +91,7 @@ let trendingBlinks = [
     progress: "31",
     aim: "Turning Your Business into an Enduring Great Company",
   },
-];
+]; // const BookInfoComponent = ({ library, setLibrary, id }: any) => {
 
 let setTrendingBlinks = () => {};
 let justAdded = [

@@ -3,7 +3,7 @@ import Library from ".";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../../theme/MainTheme/mainTheme";
-// import tabTheme from "../../../theme/TabTheme/tabTheme";
+
 const LibraryComponent = {
   title: "Page/Library",
   component: Library,
@@ -160,7 +160,6 @@ const finishedReadingBooks = [
 
 let setFinishedReadingBooks = () => {};
 
-// let setLibrary = () => {};
 export const Template: ComponentStory<typeof Library> = (args: any) => {
   return (
     <ThemeProvider theme={theme}>

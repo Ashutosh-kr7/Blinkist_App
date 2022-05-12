@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-// import LogoURL from "../../../assets/Image/Logo/Blinkist_Logo.png";
-import LogoURL from "../../../assets/Image/homePageImage/homePageImage.png";
 import Header from ".";
 import { BrowserRouter as Router } from "react-router-dom";
 

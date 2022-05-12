@@ -1,12 +1,11 @@
 import Image from "../../atom/Image";
 import Typography from "../../atom/Typography";
 import { Box } from "@mui/material";
-
 import { makeStyles } from "@material-ui/core/styles";
+
 const useStyles = makeStyles((themes) => ({
   parent: {
     backgroundColor: "#F1F6F4",
-    //width: "auto",
     display: "flex",
     padding: "100px",
     boxSizing: "border-box",
@@ -43,14 +42,18 @@ const HomePageAdvertisement = ({ heading, description, img }: any) => {
       >
         <Typography
           variant="h4"
-          sx={{ fontWeight: "bold" }}
+          sx={{
+            fontWeight: "bold",
+            color: "#03314B",
+            fontFamily: "Cera Pro",
+          }}
           className={classes.heading}
           data-testid="heading"
         >
           {heading}
         </Typography>
         <Typography
-          sx={{ color: "gray" }}
+          sx={{ color: "#6D787E", fontFamily: "Cera Pro" }}
           className={classes.para}
           data-testid="description"
         >

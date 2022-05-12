@@ -26,38 +26,29 @@ const TemplateComponent = () => {
 
   useEffect(() => {
     const bookData = async () => {
-      let response = await fetch("./json/trendingBlinks.json");
+      let response = await fetch("http://localhost:3333/trendingBlinks");
       let trendingBooks = await response.json();
-
       setTrendingBlinks(trendingBooks);
 
-      response = await fetch("./json/justAdded.json");
+      response = await fetch("http://localhost:3333/justAdded");
       let justAddedBooks = await response.json();
       setJustAdded(justAddedBooks);
 
-      response = await fetch("./json/featuredAudioBlinks.json");
+      response = await fetch("http://localhost:3333/featuredAudioBlinks");
       let audioBlinks = await response.json();
       setFeaturedAudioBlinks(audioBlinks);
 
-      response = await fetch("./json/currentlyReadingBooks.json");
+      response = await fetch("http://localhost:3333/currentlyReadingBooks");
       let currentReadingBooks = await response.json();
       setCurrentlyReadingBooks(currentReadingBooks);
-      // console.log("currentReadingBooks", currentReadingBooks);
-      // console.log("currentlyReadingBooks", currentlyReadingBooks);
 
-      response = await fetch("./json/finishedBooks.json");
+      response = await fetch("http://localhost:3333/finishedBooks");
       let finishedBooks = await response.json();
       setFinishedReadingBooks(finishedBooks);
-      // console.log("finishedBooks",);
-      // console.log("finishedBooks", finishedBooks);
-      // console.log("finishedReadingBooks", finishedReadingBooks);
 
-      response = await fetch("./json/library.json");
+      response = await fetch("http://localhost:3333/library");
       let libraryBooks = await response.json();
       setLibrary(libraryBooks);
-      // console.log("library", libraryBooks);
-      // console.log("setLIb", setLibrary);
-      // console.log("finishedBooks");
     };
 
     bookData();
@@ -107,17 +98,7 @@ const TemplateComponent = () => {
             />
             <Route
               path="bookInfo/:bookId"
-              element={
-                <BookInfo
-                  library={library}
-                  setLibrary={setLibrary}
-                  // bookId={id}
-                  // currentlyReadingBooks={currentlyReadingBooks}
-                  // setCurrentlyReadingBooks={setCurrentlyReadingBooks}
-                  // finishedReadingBooks={finishedReadingBooks}
-                  // setFinishedReadingBooks={setFinishedReadingBooks}
-                />
-              }
+              element={<BookInfo library={library} setLibrary={setLibrary} />}
             />
             <Route // Main Content part of the home page
               path="/"

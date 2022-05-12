@@ -51,7 +51,6 @@ const styles = {
 };
 
 const CardComponent = ({
-  // cardId,
   imgHeight,
   url,
   bookName,
@@ -66,7 +65,7 @@ const CardComponent = ({
   const hoverStateHandler = () => {
     setHoverState(!hoverState);
   };
-  // console.log("cardId", cardId);
+
   return (
     <>
       <Paper
@@ -85,7 +84,6 @@ const CardComponent = ({
         style={styles.parent}
       >
         <Link to={`/bookInfo/${props.cardId}`}>
-          {/* <Link to={`/bookNo/${cardId}`}> */}
           <Image
             height={imgHeight}
             width={width}
@@ -106,17 +104,33 @@ const CardComponent = ({
           style={styles.content}
           data-testid="card-box"
         >
-          <Typography variant="subtitle1" style={styles.bookName}>
+          <Typography
+            variant="subtitle1"
+            style={styles.bookName}
+            sx={{ color: "#03314B", fontFamily: "Cera Pro" }}
+          >
             {bookName}
           </Typography>
-          <Typography variant="body1" color={theme.palette.textcolor.light}>
+          <Typography
+            variant="body1"
+            color={theme.palette.textcolor.light}
+            sx={{ color: "#6D787E", fontFamily: "Cera Pro" }}
+          >
             {writerName}
           </Typography>
           <Box style={styles.flex}>
-            <Icon icon={<AccessAlarm style={styles.timeIcon} />} />
+            <Icon
+              icon={
+                <AccessAlarm
+                  style={styles.timeIcon}
+                  sx={{ color: "#6D787E" }}
+                />
+              }
+            />
             <Typography
               variant="caption2"
               color={theme.palette.textcolor.light}
+              sx={{ color: "#6D787E", fontFamily: "Cera Pro" }}
             >
               {timeRead}
             </Typography>
@@ -126,7 +140,7 @@ const CardComponent = ({
               <Icon
                 icon={
                   <MoreHoriz
-                    sx={{ padding: theme.spacing(0) }}
+                    sx={{ padding: theme.spacing(0), color: "#042330" }}
                     style={styles.rightIcon}
                   />
                 }
@@ -154,7 +168,9 @@ const CardComponent = ({
               style={styles.libraryButton}
             >
               <Icon variant="body1" icon={<AddIcon />} />
-              <Typography variant="body1">Add to library</Typography>
+              <Typography variant="body1" sx={{ fontFamily: "Cera Pro" }}>
+                Add to library
+              </Typography>
             </Box>
           )}
         </Box>

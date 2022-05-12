@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Container, Box } from "@mui/material";
 import Typography from "../../atom/Typography";
-// import baseTheme from "../../../theme/MainTheme/mainTheme";
 import baseTheme from "../../../theme/ButtonTheme/buttonTheme";
 import Tab from "../../molecule/tabs";
 import Card from "../../organism/Card";
 import CircularProgress from "@mui/material/CircularProgress";
-import theme from "../../../theme/MainTheme/mainTheme";
 import { makeStyles } from "@mui/styles";
+
 const useStyle = makeStyles({
   cards: {
     display: "flex",
@@ -16,20 +15,12 @@ const useStyle = makeStyles({
   },
 });
 
-// currentlyReadingBooks={currentlyReadingBooks}
-// setCurrentlyReadingBooks={setCurrentlyReadingBooks}
-// finishedReadingBooks={finishedReadingBooks}
-// setFinishedReadingBooks={setFinishedReadingBooks}
-// library={library}
-// setLibrary={setLibrary}
-
 const MyLibrary = ({
   currentlyReadingBooks,
   finishedReadingBooks,
   library,
 }: any) => {
   const classes = useStyle();
-  console.log("finishedReadingBooks", finishedReadingBooks);
 
   let currentlyReadingBooksData = currentlyReadingBooks;
   let finishedReadingBooksData = finishedReadingBooks;
@@ -52,8 +43,6 @@ const MyLibrary = ({
     if (currentlyReadingBooks.length === 0) {
       return <CircularProgress data-testid="circular-progress" />;
     } else if (currState === "reading") {
-      console.log(currState);
-      // {currentlyReading.map((curr: any) => {
       return currentlyReadingBooksData.map((curr: any) => {
         return (
           <Card
@@ -90,10 +79,19 @@ const MyLibrary = ({
 
   return (
     <Container sx={{ paddingTop: "50px" }}>
-      <Typography variant="h5" theme={baseTheme} mb={4}>
+      <Typography
+        variant="h5"
+        theme={baseTheme}
+        mb={4}
+        sx={{ color: "#03314B", fontFamily: "Cera Pro" }}
+      >
         My Library
       </Typography>
-      <Tab stateHandler={handleState} tabData={tabData} />
+      <Tab
+        stateHandler={handleState}
+        tabData={tabData}
+        sx={{ color: "#042330", fontFamily: "Cera Pro" }}
+      />
       <Box className={classes.cards} mt={4}>
         {cards()}
       </Box>
